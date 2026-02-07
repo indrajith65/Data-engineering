@@ -7,11 +7,11 @@ import kagglehub
 path = kagglehub.dataset_download("andrewmvd/data-engineer-jobs")
 
 print("Path to dataset files:", path)
-# logging.basicConfig(filename='app.log', level=logging.INFO)
-# logger = logging.getLogger(__name__)
+logging.basicConfig(filename='app.log', level=logging.INFO)
+logger = logging.getLogger(__name__)
 print(f"{path}\DataEngineer.csv")
 input_file = pd.read_csv(f"{path}\DataEngineer.csv")
-print(input_file.head())
+pd.display(input_file.head(20))
 class DataPipeline:
     """Basic data engineering pipeline."""
     
